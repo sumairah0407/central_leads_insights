@@ -1,0 +1,274 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.wrap{font-family:var(--font-sans);padding:1.5rem 0;color:var(--color-text-primary)}
+.kpi-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-bottom:1.5rem}
+.kpi{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:14px 12px}
+.kpi-val{font-size:24px;font-weight:500;line-height:1.1;margin-bottom:3px}
+.kpi-lbl{font-size:11px;color:var(--color-text-secondary)}
+.kpi-sub{font-size:10px;color:var(--color-text-tertiary);margin-top:4px}
+.two{display:grid;grid-template-columns:1.3fr 1fr;gap:14px;margin-bottom:14px}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:14px}
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:16px}
+.card-title{font-size:12px;font-weight:500;margin-bottom:12px;color:var(--color-text-secondary)}
+.bar-row{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.bar-lbl{font-size:11px;width:120px;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--color-text-primary)}
+.bar-lbl.sm{width:90px}
+.bar-track{flex:1;height:5px;background:var(--color-border-tertiary);border-radius:2px}
+.bar-fill{height:100%;border-radius:2px}
+.bar-val{font-size:10px;color:var(--color-text-secondary);width:44px;text-align:right;flex-shrink:0}
+.pill{display:inline-block;padding:2px 7px;border-radius:10px;font-size:10px;font-weight:500}
+.pill-g{background:var(--color-background-success);color:var(--color-text-success)}
+.pill-r{background:var(--color-background-danger);color:var(--color-text-danger)}
+.pill-y{background:var(--color-background-warning);color:var(--color-text-warning)}
+.pill-b{background:var(--color-background-info);color:var(--color-text-info)}
+.insight{border-left:3px solid var(--color-border-tertiary);padding:10px 12px;border-radius:0 6px 6px 0;margin-bottom:10px;background:var(--color-background-secondary)}
+.insight.g{border-color:#639922;background:#EAF3DE}
+.insight.r{border-color:#E24B4A;background:#FCEBEB}
+.insight.y{border-color:#BA7517;background:#FAEEDA}
+.insight.b{border-color:#378ADD;background:#E6F1FB}
+.insight-head{font-size:12px;font-weight:500;margin-bottom:4px}
+.insight-body{font-size:11px;line-height:1.6;color:#3a3632}
+.insight.g .insight-head{color:#27500A}
+.insight.r .insight-head{color:#791F1F}
+.insight.y .insight-head{color:#633806}
+.insight.b .insight-head{color:#0C447C}
+.divider{height:0.5px;background:var(--color-border-tertiary);margin:1.5rem 0}
+.section-lbl{font-size:10px;color:var(--color-text-tertiary);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;padding-left:3px}
+table{width:100%;border-collapse:collapse;font-size:11px}
+th{text-align:right;padding:5px 6px;color:var(--color-text-secondary);font-weight:500;border-bottom:0.5px solid var(--color-border-tertiary);font-size:10px}
+th:first-child{text-align:left}
+td{text-align:right;padding:6px 6px;border-bottom:0.5px solid var(--color-border-tertiary);color:var(--color-text-primary)}
+td:first-child{text-align:left}
+tr:last-child td{border-bottom:none}
+</style>
+
+<div class="wrap">
+
+<div class="kpi-grid">
+  <div class="kpi">
+    <div class="kpi-val">125</div>
+    <div class="kpi-lbl">total clients converted</div>
+    <div class="kpi-sub">from central leads · all time</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-val">₹63.1 Cr</div>
+    <div class="kpi-lbl">total AUM</div>
+    <div class="kpi-sub">current portfolio value</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-val">₹50.5 L</div>
+    <div class="kpi-lbl">avg ticket size</div>
+    <div class="kpi-sub">median ₹19.7L — high skew</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-val">54%</div>
+    <div class="kpi-lbl">wallet deepening rate</div>
+    <div class="kpi-sub">₹73.8L avg vs ₹23.5L single-txn</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-val">₹407 Cr</div>
+    <div class="kpi-lbl">unconverted pipeline</div>
+    <div class="kpi-sub">385 leads · pulled portfolio > ₹10L</div>
+  </div>
+</div>
+
+<div class="section-lbl">monthly conversion trend</div>
+<div class="card" style="margin-bottom:14px;">
+  <div style="display:flex;gap:16px;align-items:center;margin-bottom:10px;">
+    <div class="card-title" style="margin:0">monthly AUM inflow and client count</div>
+    <div style="display:flex;gap:12px;margin-left:auto;">
+      <span style="display:flex;align-items:center;gap:4px;font-size:11px;color:var(--color-text-secondary)"><span style="width:10px;height:10px;background:#378ADD;border-radius:2px;display:inline-block"></span>AUM (Cr)</span>
+      <span style="display:flex;align-items:center;gap:4px;font-size:11px;color:var(--color-text-secondary)"><span style="width:10px;height:10px;background:#E24B4A;border-radius:2px;display:inline-block"></span>Clients</span>
+    </div>
+  </div>
+  <div style="position:relative;width:100%;height:200px"><canvas id="monthlyChart"></canvas></div>
+</div>
+
+<div class="two">
+  <div class="card">
+    <div class="card-title">platform: clients vs AUM contribution</div>
+    <div style="position:relative;width:100%;height:180px"><canvas id="platChart"></canvas></div>
+  </div>
+  <div class="card">
+    <div class="card-title">TAT to first conversion — AUM by bucket</div>
+    <div style="position:relative;width:100%;height:180px"><canvas id="tatChart"></canvas></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+<div class="section-lbl">what's working</div>
+<div class="three">
+  <div class="insight g">
+    <div class="insight-head">App is the conversion engine</div>
+    <div class="insight-body">88 of 125 clients (70%) came from Mobile App. ₹39.7 Cr AUM — 63% of total. 1.41% conv rate vs 0.06% for Meta. When the app campaign was paused, conversions dropped to zero. <strong style="color:#27500A">This channel must be protected at all budget scenarios.</strong></div>
+  </div>
+  <div class="insight g">
+    <div class="insight-head">30-90 day TAT is the sweet spot</div>
+    <div class="insight-body">Leads converting in 30–90 days generated ₹31.9 Cr — 51% of all AUM — at avg ₹72L per client. The 90–120 day band averages ₹104L per client. Leads need 1–3 months of nurturing before they're ready. <strong style="color:#27500A">Don't abandon leads before 3 months.</strong></div>
+  </div>
+  <div class="insight g">
+    <div class="insight-head">Wallet deepening 3x multiplier</div>
+    <div class="insight-body">67 clients added assets after first transaction. Their avg AUM is ₹73.8L vs ₹23.5L for single-transaction clients — a 3.1x gap. 54% deepening rate is strong. <strong style="color:#27500A">The top 14 converters alone hold ₹37.8 Cr.</strong></div>
+  </div>
+</div>
+<div class="three">
+  <div class="insight g">
+    <div class="insight-head">RM books 59x more productive</div>
+    <div class="insight-body">109 of 125 conversions came from RM-owned books at 5.2% conv rate. Acquisition Team: 16 conversions at 0.09%. The gap isn't talent — it's relationship ownership and engagement depth.</div>
+  </div>
+  <div class="insight g">
+    <div class="insight-head">Google SIF — highest conv rate paid channel</div>
+    <div class="insight-body">Google SIF: 1.94% conv rate, 3 conversions. Brand search: 0.78%. People actively searching for SIF/Ionic are in late-stage decision mode. High intent baked into the query itself.</div>
+  </div>
+  <div class="insight g">
+    <div class="insight-head">PMS generates the largest tickets</div>
+    <div class="insight-body">22 clients invested in PMS first — avg ₹75L, contributing ₹16.5 Cr (26% of total AUM from 17% of clients). AOL Stocks: 8 clients, ₹80.8L avg. Higher-product clients are disproportionately more valuable.</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+<div class="section-lbl">what's not working</div>
+<div class="three">
+  <div class="insight r">
+    <div class="insight-head">Meta: 1,613 leads, 6 conversions, ₹9.6 Cr</div>
+    <div class="insight-body">0.06% conversion rate. Allocate vserv: 41% bad lead rate, 2.7% relevant rate. PA remarketing: 28.7% bad leads. The audience definition is wrong — these people are not Ionic's clients. <strong style="color:#791F1F">Reallocate this budget.</strong></div>
+  </div>
+  <div class="insight r">
+    <div class="insight-head">Budget cuts destroy quality, not just volume</div>
+    <div class="insight-body">Your hypothesis confirmed by data. When spend drops, Meta exits the learned audience and shifts to broader targeting. Low-volume weeks (under 200 leads) saw relevant rates fall to 3.9%. Volume and quality move together.</div>
+  </div>
+  <div class="insight r">
+    <div class="insight-head">69% of leads never meaningfully reached</div>
+    <div class="insight-body">App leads connect at 11.6% but convert 51% when reached. Website: 4.3% connect, 54% relevant-of-connected. No calling SLA means the highest-intent pipeline sits untouched. This is the largest recoverable inefficiency.</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+<div class="section-lbl">book-level performance · conversions</div>
+<div class="two">
+  <div class="card">
+    <table>
+      <thead><tr><th>Book (lead RM)</th><th>Clients</th><th>AUM (Cr)</th><th>Avg (L)</th><th>Avg TAT</th></tr></thead>
+      <tbody>
+        <tr><td>Vijay Krishna Chinni</td><td>40</td><td>₹14.8</td><td>₹36.9</td><td>108d</td></tr>
+        <tr><td>Ajay Bhute</td><td>10</td><td>₹12.3 <span class="pill pill-g">high ticket</span></td><td>₹123.3</td><td>71d</td></tr>
+        <tr><td>Madhup Patet</td><td>23</td><td>₹8.9</td><td>₹38.5</td><td>109d</td></tr>
+        <tr><td>Nayanish Prabhu</td><td>8</td><td>₹8.5 <span class="pill pill-g">high ticket</span></td><td>₹106.3</td><td>65d</td></tr>
+        <tr><td>Abhishek Sharma</td><td>7</td><td>₹4.9</td><td>₹70.3</td><td>94d</td></tr>
+        <tr><td>Dhiren Shah</td><td>9</td><td>₹4.8</td><td>₹53.1</td><td>122d</td></tr>
+        <tr><td>Abhishek kumar</td><td>2</td><td>₹4.6 <span class="pill pill-g">high ticket</span></td><td>₹230.9</td><td>93d</td></tr>
+        <tr><td>Vishal Khanna</td><td>8</td><td>₹2.2</td><td>₹27.7</td><td>98d</td></tr>
+        <tr><td>Acquisition Team</td><td>16</td><td>₹1.1 <span class="pill pill-r">low</span></td><td>₹7.2</td><td>50d</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card">
+    <div class="card-title">unconverted pipeline — top category by pulled AUM</div>
+    <div class="bar-row" style="margin-bottom:14px;">
+      <div class="bar-lbl">Warm Lead</div>
+      <div class="bar-track"><div class="bar-fill" style="width:100%;background:#639922"></div></div>
+      <div class="bar-val">₹127.5 Cr</div>
+    </div>
+    <div class="bar-row" style="margin-bottom:14px;">
+      <div class="bar-lbl">Couldn't connect</div>
+      <div class="bar-track"><div class="bar-fill" style="width:97%;background:#BA7517"></div></div>
+      <div class="bar-val">₹123.6 Cr</div>
+    </div>
+    <div class="bar-row" style="margin-bottom:14px;">
+      <div class="bar-lbl">New Lead</div>
+      <div class="bar-track"><div class="bar-fill" style="width:71%;background:#B4B2A9"></div></div>
+      <div class="bar-val">₹90.5 Cr</div>
+    </div>
+    <div class="bar-row" style="margin-bottom:14px;">
+      <div class="bar-lbl">Cold Lead</div>
+      <div class="bar-track"><div class="bar-fill" style="width:28%;background:#85B7EB"></div></div>
+      <div class="bar-val">₹35.3 Cr</div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-lbl">Hot Lead</div>
+      <div class="bar-track"><div class="bar-fill" style="width:11%;background:#E24B4A"></div></div>
+      <div class="bar-val">₹14.6 Cr</div>
+    </div>
+    <div style="margin-top:14px;font-size:11px;color:var(--color-text-secondary);border-top:0.5px solid var(--color-border-tertiary);padding-top:10px;">Warm + Couldn't connect = ₹251 Cr pipeline waiting to be worked. Hot Lead pipeline alone ₹14.6 Cr — these should be on RM desks today.</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+<div class="section-lbl">top 3 actions</div>
+<div class="three">
+  <div style="background:var(--color-text-primary);color:var(--color-background-primary);border-radius:var(--border-radius-lg);padding:16px">
+    <div style="font-size:28px;font-weight:500;color:#EF9F27;line-height:1;margin-bottom:8px">01</div>
+    <div style="font-size:12px;font-weight:500;margin-bottom:6px">escalate 21 Hot Leads with pulled portfolio</div>
+    <div style="font-size:11px;line-height:1.7;color:#bbb8b2">₹14.6 Cr in pulled AUM, category = Hot. Assign directly to RM within 24 hours. This is the closest-to-close pipeline in the entire system.</div>
+  </div>
+  <div style="background:var(--color-text-primary);color:var(--color-background-primary);border-radius:var(--border-radius-lg);padding:16px">
+    <div style="font-size:28px;font-weight:500;color:#EF9F27;line-height:1;margin-bottom:8px">02</div>
+    <div style="font-size:12px;font-weight:500;margin-bottom:6px">protect app campaign budget at all costs</div>
+    <div style="font-size:11px;line-height:1.7;color:#bbb8b2">88/125 conversions, ₹39.7 Cr AUM. Pausing it means zero conversions — proven by your own data. If budget must be cut, cut Meta Allocate first (1 conversion from 650 leads).</div>
+  </div>
+  <div style="background:var(--color-text-primary);color:var(--color-background-primary);border-radius:var(--border-radius-lg);padding:16px">
+    <div style="font-size:28px;font-weight:500;color:#EF9F27;line-height:1;margin-bottom:8px">03</div>
+    <div style="font-size:12px;font-weight:500;margin-bottom:6px">fix calling SLA for app + website leads</div>
+    <div style="font-size:11px;line-height:1.7;color:#bbb8b2">51–54% relevant-of-connected on these channels. The failure is in reaching them, not the quality. Mandate ≥3 attempts in 48 hours for all app/website leads with pulled portfolio > ₹10L.</div>
+  </div>
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const months = ['Jan25','Mar25','Apr25','May25','Jun25','Jul25','Aug25','Sep25','Oct25','Nov25','Dec25','Jan26','Feb26','Mar26','Apr26'];
+const aums   = [0,0,0.88,2.31,1.28,1.92,1.43,2.56,3.55,3.76,4.47,18.03,5.71,3.98,12.49];
+const clients= [1,1,1,2,4,3,5,8,18,10,19,11,15,12,14];
+
+new Chart(document.getElementById('monthlyChart'),{
+  data:{labels:months,datasets:[
+    {type:'bar',label:'AUM (Cr)',data:aums,backgroundColor:'rgba(55,138,221,0.7)',yAxisID:'y'},
+    {type:'line',label:'Clients',data:clients,borderColor:'#E24B4A',borderWidth:2,pointRadius:3,tension:0.3,yAxisID:'y2',fill:false}
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false}},
+    scales:{
+      y:{position:'left',ticks:{callback:v=>'₹'+v+'Cr',font:{size:9}},grid:{color:'rgba(0,0,0,0.05)'}},
+      y2:{position:'right',grid:{drawOnChartArea:false},ticks:{font:{size:9}}},
+      x:{ticks:{font:{size:9},maxRotation:45}}
+    }}
+});
+
+new Chart(document.getElementById('platChart'),{
+  type:'bar',
+  data:{
+    labels:['App','Meta','AOL','Website','Google'],
+    datasets:[
+      {label:'Clients',data:[88,6,8,9,14],backgroundColor:'rgba(55,138,221,0.7)',yAxisID:'y'},
+      {label:'AUM (Cr)',data:[39.7,9.6,7.4,4.5,1.9],backgroundColor:'rgba(99,153,34,0.7)',yAxisID:'y2'}
+    ]
+  },
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false}},
+    scales:{
+      y:{position:'left',ticks:{font:{size:9}}},
+      y2:{position:'right',grid:{drawOnChartArea:false},ticks:{callback:v=>'₹'+v,font:{size:9}}},
+      x:{ticks:{font:{size:10}}}
+    }}
+});
+
+new Chart(document.getElementById('tatChart'),{
+  type:'bar',
+  data:{
+    labels:['0-15d','15-30d','30-60d','60-90d','90-120d','120-180d','180d+'],
+    datasets:[{
+      label:'AUM (Cr)',
+      data:[2.84,5.31,22.17,9.74,10.45,5.27,5.56],
+      backgroundColor:['#B4B2A9','#B4B2A9','#378ADD','#378ADD','#378ADD','#B4B2A9','#B4B2A9']
+    }]
+  },
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false}},
+    scales:{
+      y:{ticks:{callback:v=>'₹'+v+'Cr',font:{size:9}}},
+      x:{ticks:{font:{size:9}}}
+    }}
+});
+</script>
