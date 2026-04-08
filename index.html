@@ -532,8 +532,284 @@ tr:hover td{background:var(--paper);}
  
 <div class="footer">
   <div class="fn">Ionic Wealth — Central Leads Intelligence Report &nbsp;·&nbsp; Generated 07 Apr 2026</div>
-  <div class="fn">Sources: central_leads (30Nov25–04Apr26) &nbsp;·&nbsp; central_conversions (07Apr26) &nbsp;·&nbsp; Weekly-Report-04-04-2026</div>
+  <div class="fn">Sources: central_leads_all_time (13,071 leads) &nbsp;·&nbsp; central_conversions (07Apr26) &nbsp;·&nbsp; Weekly-Report-04-04-2026</div>
 </div>
+</div>
+ 
+<!-- ════════════════════════════════════════════════════════════
+     TAB 2 — SPENDS, FUNNEL, FORECASTING, CAMPAIGNS
+════════════════════════════════════════════════════════════ -->
+<div id="tab-spends" style="max-width:1180px;margin:0 auto;padding:0 40px 80px;display:none;">
+ 
+  <!-- Nav back -->
+  <div style="display:flex;align-items:center;gap:16px;padding:24px 0;border-bottom:1px solid var(--border);margin-bottom:40px;">
+    <button onclick="switchTab('main')" style="background:var(--ink);color:var(--paper);border:none;padding:8px 18px;border-radius:4px;font-family:'Instrument Sans',sans-serif;font-size:12px;cursor:pointer;font-weight:500;">← Back to main report</button>
+    <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);">Spends · Funnel · Forecasting · Campaign Analysis &nbsp;|&nbsp; All-time base: 13,071 leads · ₹1.83 Cr total spend (Apr 25–Mar 26)</div>
+  </div>
+ 
+  <!-- ── S10: SPEND OVERVIEW ── -->
+  <span class="sec-anchor" id="s10"></span>
+  <div class="section">
+    <div class="sec-hdr"><div class="sec-num">10</div><div><div class="sec-title">Spend overview</div><div class="sec-sub">Total performance marketing spend Apr 2025 – Apr 2026 · Meta + Google + LinkedIn + MyGate</div></div></div>
+ 
+    <div class="kpi-row">
+      <div class="kpi b"><div class="kpi-val">₹1.83 Cr</div><div class="kpi-lbl">total spend (12 months)</div><div class="kpi-sub">Meta ₹1.11 Cr · Google ₹25L · LinkedIn ₹26L · MyGate ₹5L</div></div>
+      <div class="kpi g"><div class="kpi-val">32×</div><div class="kpi-lbl">overall marketing ROI (AUM/spend)</div><div class="kpi-sub">₹58.5 Cr AUM ÷ ₹1.83 Cr spend (Mar 26 cut)</div></div>
+      <div class="kpi y"><div class="kpi-val">₹2,424</div><div class="kpi-lbl">overall cost per relevant lead (CPRL)</div><div class="kpi-sub">from CPRL tracker · Nov 25 – Apr 26</div></div>
+      <div class="kpi g"><div class="kpi-val">14×</div><div class="kpi-lbl">Google ROI</div><div class="kpi-sub">₹3.5 Cr AUM from ₹25L spend · best efficiency</div></div>
+      <div class="kpi r"><div class="kpi-val">~1.6×</div><div class="kpi-lbl">Meta ROI (excl. outlier)</div><div class="kpi-sub">Without Sushant Dash: ₹1.9 Cr from ₹1.18 Cr spend</div></div>
+    </div>
+ 
+    <div class="g2" style="margin-bottom:16px;">
+      <div class="card">
+        <div class="card-title">Weekly Meta spend vs relevant lead rate</div>
+        <div class="card-sub">Spend cuts cause double damage — volume and quality fall together. Below ₹1.5L/week, relevant rate collapses.</div>
+        <div class="legend">
+          <div class="leg"><span class="swatch" style="background:rgba(226,75,74,0.5)"></span>Meta spend (₹) — left axis</div>
+          <div class="leg"><span class="swatch" style="background:#639922"></span>Hot+Warm % of leads — right axis</div>
+        </div>
+        <div class="cw" style="height:220px;"><canvas id="c_spendqual"></canvas></div>
+        <div class="cn">Source: Weekly Campaign-wise sheet · Meta PA (Streamliner) campaign · Nov 2025 – Apr 2026. Hot+Warm% from CPRL tracker.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Monthly spend by channel (₹ L)</div>
+        <div class="card-sub">Meta dominates spend. Google significantly underfunded relative to conversion quality.</div>
+        <div class="legend">
+          <div class="leg"><span class="swatch" style="background:#E24B4A"></span>Meta</div>
+          <div class="leg"><span class="swatch" style="background:#85B7EB"></span>Google</div>
+          <div class="leg"><span class="swatch" style="background:#639922"></span>LinkedIn</div>
+          <div class="leg"><span class="swatch" style="background:#EF9F27"></span>MyGate/Other</div>
+        </div>
+        <div class="cw" style="height:220px;"><canvas id="c_monthspend"></canvas></div>
+        <div class="cn">Source: Monthly Breakup sheet · amounts in ₹ Lakhs. Google data from Apr 25 onwards when campaigns activated.</div>
+      </div>
+    </div>
+ 
+    <div class="card">
+      <div class="card-title">Campaign-level performance — all time</div>
+      <div class="card-sub">Sorted by relevant lead count. Paused campaigns shown for reference.</div>
+      <table>
+        <thead><tr><th>Campaign</th><th>Status</th><th>Total leads</th><th>Relevant</th><th>Rel %</th><th>Spend (₹)</th><th>CPRL (₹)</th><th>Verdict</th></tr></thead>
+        <tbody>
+          <tr><td>Google Brand Search ("Ionic")</td><td>Active</td><td>183</td><td>46</td><td><strong>25.1%</strong></td><td>₹2.1L</td><td>₹4,512</td><td><span class="pill pg">highest relevance</span></td></tr>
+          <tr><td>Google PMS Search</td><td>Active</td><td>20</td><td>5</td><td><strong>25.0%</strong></td><td>₹1.4L</td><td>₹28,339</td><td><span class="pill pg">high quality, low vol</span></td></tr>
+          <tr><td>Google SIF Campaign</td><td>Active</td><td>331</td><td>64</td><td><strong>19.3%</strong></td><td>₹17.6L</td><td>₹27,480</td><td><span class="pill pg">best intent channel</span></td></tr>
+          <tr><td>Accredited Investor (Paused)</td><td>Paused</td><td>363</td><td>62</td><td>17.1%</td><td>₹7.3L</td><td>₹11,791</td><td><span class="pill py">was working — worth reactivating</span></td></tr>
+          <tr><td>App Install (Meta+Google)</td><td>Active</td><td>—</td><td>—</td><td>—</td><td>₹3.4L</td><td>—</td><td><span class="pill pg">critical — 87 conversions</span></td></tr>
+          <tr><td>PA Streamliner (Meta Form Fill)</td><td>Active</td><td>2,540</td><td>180</td><td>7.1%</td><td>₹51.0L</td><td>₹28,342</td><td><span class="pill py">largest volume · audience needs tightening</span></td></tr>
+          <tr><td>PA Streamliner — Landing Page</td><td>Paused</td><td>—</td><td>1</td><td>—</td><td>₹0.4L</td><td>₹37,070</td><td><span class="pill pr">paused correctly</span></td></tr>
+          <tr><td>Allocate Meta Form Fill</td><td>Active</td><td>682</td><td>52</td><td>7.6%</td><td>₹19.8L</td><td>₹38,091</td><td><span class="pill pr">high CPRL, low quality audience</span></td></tr>
+          <tr><td>Portfolio Streamliner — Google</td><td>Active</td><td>89</td><td>11</td><td>12.4%</td><td>₹1.2L</td><td>₹10,686</td><td><span class="pill py">small budget, reasonable quality</span></td></tr>
+          <tr><td>Allocate Google Demand Gen</td><td>Paused</td><td>19</td><td>2</td><td>10.5%</td><td>₹1.3L</td><td>₹67,132</td><td><span class="pill pr">paused correctly — high CPRL</span></td></tr>
+          <tr><td>Allocate Google Search</td><td>Paused</td><td>4</td><td>0</td><td>0%</td><td>₹0.3L</td><td>—</td><td><span class="pill pr">zero relevance</span></td></tr>
+        </tbody>
+      </table>
+      <div class="cn">CPRL = Cost Per Relevant Lead. Relevant = Warm + Hot + Client. Source: Weekly Campaign-wise sheet (CPRL tracker), Nov 2025–Apr 2026 window.</div>
+    </div>
+  </div>
+ 
+  <!-- ── S11: FUNNEL VIEW ── -->
+  <span class="sec-anchor" id="s11"></span>
+  <div class="section">
+    <div class="sec-hdr"><div class="sec-num">11</div><div><div class="sec-title">Full funnel — all time</div><div class="sec-sub">13,071 leads from Jan 2025 to Apr 2026 · what happened at each stage</div></div></div>
+ 
+    <div class="card" style="margin-bottom:16px;">
+      <div class="card-title">Lead → Relevant → Pipeline → Conversion funnel</div>
+      <div class="card-sub">Each stage represents leads that reached that level. Conversion rate at each drop-off is shown.</div>
+      <div class="legend">
+        <div class="leg"><span class="swatch" style="background:#378ADD"></span>Stage volume</div>
+        <div class="leg"><span class="swatch" style="background:#639922"></span>Conversion rate to next stage (%)</div>
+      </div>
+      <div class="cw" style="height:240px;"><canvas id="c_funnel"></canvas></div>
+      <div class="cn">All-time lead base (Jan 2025–Apr 2026). Relevant = Warm+Hot+Client at final evaluation. Pipeline = pulled portfolio &gt;₹50L. Conversion = first_date_of_transaction recorded.</div>
+    </div>
+ 
+    <div class="g3" style="margin-bottom:16px;">
+      <div class="ins b">
+        <div class="ins-h">Stage 1→2: Lead to connected (30.7%)</div>
+        <div class="ins-b">Of 13,071 all-time leads, ~40% are never meaningfully reached. This is the largest absolute drop in the funnel and requires no additional marketing spend to address — only an operational calling SLA.</div>
+      </div>
+      <div class="ins y">
+        <div class="ins-h">Stage 2→3: Connected to relevant (21%)</div>
+        <div class="ins-b">Once reached, 1 in 5 is relevant. This rate is remarkably stable across weeks (13–34%) — the primary variable is connection rate, not prospect quality. App and Website leads hit 51–54% when reached.</div>
+      </div>
+      <div class="ins g">
+        <div class="ins-h">Stage 3→4: Relevant to converted (16.3%)</div>
+        <div class="ins-b">Of all relevant leads, 16.3% have converted (125/769 relevant all-time). This is the RM relationship stage — the 33× gap between acquisition team (0.09%) and RM books (5.2%) materialises here.</div>
+      </div>
+    </div>
+ 
+    <div class="g2e">
+      <div class="card">
+        <div class="card-title">Monthly lead volume trend — all time (all channels)</div>
+        <div class="card-sub">Volume peaked Aug–Nov 2025 during high-spend periods. 2026 shows spend rationalisation.</div>
+        <div class="legend">
+          <div class="leg"><span class="swatch" style="background:#378ADD"></span>App</div>
+          <div class="leg"><span class="swatch" style="background:#E24B4A"></span>Meta</div>
+          <div class="leg"><span class="swatch" style="background:#BA7517"></span>AOL</div>
+          <div class="leg"><span class="swatch" style="background:#85B7EB"></span>Google</div>
+          <div class="leg"><span class="swatch" style="background:#639922"></span>Website</div>
+          <div class="leg"><span class="swatch" style="background:#B4B2A9"></span>LinkedIn+Other</div>
+        </div>
+        <div class="cw" style="height:230px;"><canvas id="c_monthly_vol"></canvas></div>
+        <div class="cn">Source: central_leads_status_map (all-time, 13,071 leads). Platform tagged from source + utm_source fields.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Relevant rate by month — showing trend</div>
+        <div class="card-sub">Jan–Jun 2025 show high relevant rates (40–54%) — earlier leads had more time to be worked. Newer cohorts haven't matured.</div>
+        <div class="legend">
+          <div class="leg"><span class="swatch" style="background:#639922"></span>Relevant % (Warm+Hot+Client / total)</div>
+          <div class="leg"><span class="swatch dashed" style="background:#EF9F27"></span>6.5% average baseline (Nov 25–Apr 26)</div>
+        </div>
+        <div class="cw" style="height:230px;"><canvas id="c_monthly_rel"></canvas></div>
+        <div class="cn">Important caveat: Jan–Jun 2025 relevance rates are inflated because those leads have had 6–15 months to be worked. Recent months (Jan–Apr 26) show lower rates because many leads are still in progress.</div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ── S12: FORECASTING ── -->
+  <span class="sec-anchor" id="s12"></span>
+  <div class="section">
+    <div class="sec-hdr"><div class="sec-num">12</div><div><div class="sec-title">Forecasting & pipeline</div><div class="sec-sub">3-month lag model · potential conversion cohorts · Q2 2026 outlook</div></div></div>
+ 
+    <div class="kpi-row" style="grid-template-columns:repeat(4,minmax(0,1fr));">
+      <div class="kpi g"><div class="kpi-val">~90d</div><div class="kpi-lbl">validated lead-to-AUM lag</div><div class="kpi-sub">Jun–Aug 25 leads → Oct–Jan 26 AUM peak</div></div>
+      <div class="kpi y"><div class="kpi-val">₹15–20 Cr</div><div class="kpi-lbl">quarterly AUM inflow (normalised)</div><div class="kpi-sub">excl. outlier spikes · stable trajectory</div></div>
+      <div class="kpi b"><div class="kpi-val">₹65–72 L</div><div class="kpi-lbl">forecast avg ticket (Apr–May 26)</div><div class="kpi-sub">if RM productivity and pace held constant</div></div>
+      <div class="kpi g"><div class="kpi-val">₹312 Cr</div><div class="kpi-lbl">warm pipeline (pulled &gt;₹50L)</div><div class="kpi-sub">126 leads · if even 5% convert = ₹15.6 Cr</div></div>
+    </div>
+ 
+    <div class="g2" style="margin-bottom:16px;">
+      <div class="card">
+        <div class="card-title">Lead volume (lagged 3 months) vs AUM inflow — the 90-day model</div>
+        <div class="card-sub">Lead inflow from month M maps to conversion AUM ~3 months later. Jan 26 spike was outlier (2 large clients).</div>
+        <div class="legend">
+          <div class="leg"><span class="swatch" style="background:rgba(55,138,221,0.5)"></span>Leads created (3-month lag applied) — left axis</div>
+          <div class="leg"><span class="swatch" style="background:#E24B4A"></span>Actual AUM inflow ₹ Cr — right axis</div>
+          <div class="leg"><span class="swatch dashed" style="background:#639922"></span>Forecast AUM ₹ Cr (normalised) — right axis</div>
+        </div>
+        <div class="cw" style="height:230px;"><canvas id="c_lagmodel"></canvas></div>
+        <div class="cn">Lag model: leads from month M correlate to AUM from month M+3. Forecast uses ₹30–35L avg normalised ticket × expected conversion count from lagged pipeline. Jan 26 is modelled as outlier (₹14.9 Cr = 2 clients removed from trend line).</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Spend-to-AUM efficiency — what ₹1 of spend produces</div>
+        <div class="card-sub">Normalised estimates (after removing outlier large-ticket cases from Meta and Jan 26 spike)</div>
+        <div style="margin:16px 0;">
+          <div class="mbr"><div class="mbl">Google SIF</div><div class="mbt"><div class="mbf" style="width:100%;background:#639922"></div></div><div class="mbv">~14× ROI</div></div>
+          <div class="mbr"><div class="mbl">App campaign</div><div class="mbt"><div class="mbf" style="width:90%;background:#378ADD"></div></div><div class="mbv">~∞ (organic)</div></div>
+          <div class="mbr"><div class="mbl">Google Brand</div><div class="mbt"><div class="mbf" style="width:80%;background:#85B7EB"></div></div><div class="mbv">~12×</div></div>
+          <div class="mbr"><div class="mbl">AOL</div><div class="mbt"><div class="mbf" style="width:50%;background:#BA7517"></div></div><div class="mbv">~7×</div></div>
+          <div class="mbr"><div class="mbl">Meta PA (normalised)</div><div class="mbt"><div class="mbf" style="width:20%;background:#EF9F27"></div></div><div class="mbv">~2×</div></div>
+          <div class="mbr"><div class="mbl">Meta Allocate</div><div class="mbt"><div class="mbf" style="width:5%;background:#E24B4A"></div></div><div class="mbv">&lt;1×</div></div>
+        </div>
+        <div style="background:var(--green-lt);border-radius:4px;padding:10px 12px;">
+          <div style="font-size:12px;font-weight:600;color:var(--green);margin-bottom:4px;">Normalised spend model</div>
+          <div style="font-size:11px;color:#2e2c28;line-height:1.65;">₹10L spend → ₹2.0–2.2 Cr AUM &nbsp;·&nbsp; ₹50L → ₹10–11 Cr &nbsp;·&nbsp; ₹1 Cr → ₹20–22 Cr. Assumes current lead quality, conversion velocity, and RM capacity held constant.</div>
+        </div>
+        <div class="cn">Source: March 2026 monthly report · normalised for outlier clients. Actual ROI figures from campaign data.</div>
+      </div>
+    </div>
+ 
+    <div class="card" style="margin-bottom:16px;">
+      <div class="card-title">Q2 2026 forecast — three scenarios</div>
+      <div class="card-sub">Based on current lead cohorts in pipeline and the 90-day lag model. Scenario inputs: normalised avg ticket ₹30–35L, conversion rate 0.5% of in-pipeline leads.</div>
+      <div class="g3" style="margin-top:8px;">
+        <div style="border:1px solid var(--border);border-radius:4px;padding:14px;background:var(--red-lt);">
+          <div style="font-size:11px;font-weight:600;color:var(--red);margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em;">Conservative</div>
+          <div style="font-size:22px;font-family:'DM Serif Display',serif;margin-bottom:4px;">₹12–15 Cr</div>
+          <div style="font-size:11px;color:var(--muted);">AUM in Q2 2026</div>
+          <div style="font-size:11px;margin-top:8px;line-height:1.6;">Budget cuts continue. No improvement in calling SLA. No new high-ticket conversions from ₹50L+ pipeline. ~35–45 clients at ₹30L avg.</div>
+        </div>
+        <div style="border:2px solid var(--blue);border-radius:4px;padding:14px;background:var(--blue-lt);">
+          <div style="font-size:11px;font-weight:600;color:var(--blue);margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em;">Base case</div>
+          <div style="font-size:22px;font-family:'DM Serif Display',serif;margin-bottom:4px;">₹20–28 Cr</div>
+          <div style="font-size:11px;color:var(--muted);">AUM in Q2 2026</div>
+          <div style="font-size:11px;margin-top:8px;line-height:1.6;">App campaign maintained. Calling SLA enforced. 2–3 conversions from ₹312 Cr warm pipeline at ₹50L+ ticket. ~55–65 clients at ₹35L avg + outlier contribution.</div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:4px;padding:14px;background:var(--green-lt);">
+          <div style="font-size:11px;font-weight:600;color:var(--green);margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em;">Upside</div>
+          <div style="font-size:22px;font-family:'DM Serif Display',serif;margin-bottom:4px;">₹35–50 Cr</div>
+          <div style="font-size:11px;color:var(--muted);">AUM in Q2 2026</div>
+          <div style="font-size:11px;margin-top:8px;line-height:1.6;">Pooja Kapoor (₹51.6 Cr) or Valay Parikh (₹39.8 Cr) converts. Google budget scaled. Wallet deepening accelerates in existing client base. Driven by 1–2 outlier events.</div>
+        </div>
+      </div>
+      <div class="cn">Q2 2026 = Apr–Jun 2026. Base case excludes outlier spikes — they cannot be planned for. The ₹312 Cr warm pipeline is the largest controllable variable in the upside scenario.</div>
+    </div>
+ 
+    <div class="card">
+      <div class="card-title">Potential conversion cohorts — who to prioritise for Q2</div>
+      <div class="card-sub">Leads most likely to convert in next 60–90 days based on category + age + pulled portfolio</div>
+      <table>
+        <thead><tr><th>Cohort</th><th>Count</th><th>Pulled AUM</th><th>Avg ticket</th><th>Rationale</th><th>Priority</th></tr></thead>
+        <tbody>
+          <tr><td>Hot Leads · pulled &gt;₹10L</td><td>21</td><td>₹14.6 Cr</td><td>₹69.5 L</td><td>Highest intent signal · RM engaged · ready for close</td><td><span class="pill pg">Immediate</span></td></tr>
+          <tr><td>Warm Leads · pulled &gt;₹50L · age &gt;60d</td><td>31</td><td>₹78.4 Cr</td><td>₹252 L</td><td>Mature relationship + high corpus + already in discussion</td><td><span class="pill pg">This week</span></td></tr>
+          <tr><td>Warm Leads · pulled ₹10–50L · age &gt;30d</td><td>56</td><td>₹39.1 Cr</td><td>₹70 L</td><td>Mid-tier pipeline · sufficient nurturing time elapsed</td><td><span class="pill py">Next 30 days</span></td></tr>
+          <tr><td>CC Leads · pulled &gt;₹50L · never reached</td><td>33</td><td>₹81.0 Cr</td><td>₹245 L</td><td>Tried but unreached · very high corpus · must retry with different approach/time</td><td><span class="pill py">Prioritise re-calling</span></td></tr>
+          <tr><td>New Leads · pulled &gt;₹50L · never called</td><td>16</td><td>₹75.6 Cr</td><td>₹472 L</td><td>Pulled portfolio, zero outreach — Pooja Kapoor cohort</td><td><span class="pill pr">Call immediately</span></td></tr>
+          <tr><td>Existing clients · no additional investment in &gt;90d</td><td>67</td><td>₹49.4 Cr total AUM</td><td>₹73.8 L avg</td><td>Wallet deepening opportunity · 54% have already deepened once</td><td><span class="pill pb">RM follow-up</span></td></tr>
+        </tbody>
+      </table>
+      <div class="cn">Cohort analysis from central_leads_status_map (all-time). Ages calculated from created_date to 07 Apr 2026. Pulled AUM from total_pulled_value field.</div>
+    </div>
+  </div>
+ 
+  <!-- ── S13: PLATFORM & CAMPAIGN STORIES ── -->
+  <span class="sec-anchor" id="s13"></span>
+  <div class="section">
+    <div class="sec-hdr"><div class="sec-num">13</div><div><div class="sec-title">Platform stories — what worked and what didn't</div><div class="sec-sub">Platform and campaign level success/failure analysis with specific evidence</div></div></div>
+ 
+    <div class="slabel" style="color:var(--green);">success stories</div>
+    <div class="g2" style="margin-bottom:16px;">
+      <div class="ins g">
+        <div class="ins-h">App campaign: the one non-negotiable</div>
+        <div class="ins-b" style="font-size:12px;">87 of 125 conversions (70%). ₹39.3 Cr AUM. 8.74% conversion rate — nearly 4× any other channel. When paused (3 consecutive weeks in Q1 2026), conversions went to zero. Restarting restored them. The causal mechanism is clear: the app install campaign drives high-intent users to download, pull their portfolio, and then engage with the RM.<br><br>The channel is organic — the spend is on driving downloads, not on conversion itself. This makes its ROI effectively infinite against just conversion activity. <strong style="color:var(--green);">Budget this as infrastructure, not discretionary spend.</strong></div>
+      </div>
+      <div class="ins g">
+        <div class="ins-h">Google SIF: the fastest-converting paid channel</div>
+        <div class="ins-b" style="font-size:12px;">155 leads, 24 relevant (15.5%), 3 conversions, avg ₹45.6 day TAT — 50% faster than Meta or App. ₹17.6L spend, ₹1.76 Cr AUM from SIF alone (10× ROI from this one campaign).<br><br>The mechanism: people searching "SIF fund", "strategic investment fund India" or "Ionic SIF" are already in an active research phase. They've already decided to invest in the category; they're just choosing a provider. This is the highest-intent paid audience Ionic has access to.<br><br><strong style="color:var(--green);">Google SIF can't scale infinitely (search volume is finite) but it can scale 2–3× more than current budget without quality dilution.</strong></div>
+      </div>
+      <div class="ins g">
+        <div class="ins-h">Accredited Investor campaign (paused): the unfinished experiment</div>
+        <div class="ins-b" style="font-size:12px;">363 leads, 62 relevant (17.1%), CPRL ₹11,791 — the most efficient CPRL of any Meta campaign. Was paused. The audience (SEBI accredited investors) is self-qualified by regulatory definition — they've certified minimum net worth. <strong style="color:var(--green);">Reactivating this campaign at even ₹5L/month should produce significantly better relevant rates than the current Allocate campaigns.</strong></div>
+      </div>
+      <div class="ins g">
+        <div class="ins-h">AOL Streamliner email: highest ticket size per conversion</div>
+        <div class="ins-b" style="font-size:12px;">8 conversions, avg ₹92.8 L, median ₹86.2 L — both measures confirm quality is real. The mechanism: people who open an email about their portfolio assessment are already engaged with their own wealth management. They're not passive scrollers. This is interruption marketing at its most efficient. <strong style="color:var(--green);">8 clients generating ₹7.4 Cr from essentially zero marginal ad spend.</strong></div>
+      </div>
+    </div>
+ 
+    <div class="slabel" style="color:var(--red);">what isn't working</div>
+    <div class="g2" style="margin-bottom:16px;">
+      <div class="ins r">
+        <div class="ins-h">Meta Allocate campaigns: spending money to find the wrong audience</div>
+        <div class="ins-b" style="font-size:12px;">Allocate vserv: 258 leads, 7 relevant (2.7%), 41% bad lead rate, CPRL ₹38,091. Allocate Meta Form Fill: 682 leads, 52 relevant (7.6%), 34% bad lead rate.<br><br>The Allocate product has a high minimum ticket size and requires a specific investor profile. Meta's broad audience targeting — even with lookalikes — is finding people who don't meet basic eligibility: wrong ticket size, wrong investor profile, or outright junk entries. <strong style="color:var(--red);">Every rupee on Meta Allocate produces a worse outcome than the same rupee on Google SIF or the App campaign.</strong><br><br>The PMAX problem is embedded here too: 176 leads from PMAX, zero relevant, zero conversions. Should be off.</div>
+      </div>
+      <div class="ins r">
+        <div class="ins-h">LinkedIn: ₹26L spent, 0 conversions</div>
+        <div class="ins-b" style="font-size:12px;">557 LinkedIn leads in the all-time dataset (Ads + organic), zero conversions recorded. The audience (job seniority targeting, decision-makers) has the right demographic profile on paper — but the conversion mechanics don't work. LinkedIn users engage professionally, not in a wealth management mindset. The form fill rate is there (742 leads over Mar–Sep 25) but the follow-through to investment hasn't happened.<br><br><strong style="color:var(--red);">₹26L spent with zero AUM return. Either needs a completely different creative approach (SEBI accreditation angle) or pause and redeploy to App/Google SIF.</strong></div>
+      </div>
+      <div class="ins r">
+        <div class="ins-h">Meta's budget sensitivity: the floor problem</div>
+        <div class="ins-b" style="font-size:12px;">The data is unambiguous: weeks with Meta spend below ₹1.5L produce relevant rates of 3.9–5.1%. Weeks above ₹2.5L produce 8–12%. This isn't random noise — it's Meta's algorithm losing its learned audience when daily budgets fall below the threshold needed to maintain consistent delivery and optimisation.<br><br><strong style="color:var(--red);">When you cut Meta budget below the algorithm's floor, you're not saving money linearly — you're paying a higher cost-per-relevant-lead for worse quality leads. There's a minimum viable budget (approximately ₹2.5–3L/week) below which Meta becomes structurally inefficient for this use case.</strong></div>
+      </div>
+      <div class="ins r">
+        <div class="ins-h">The calling gap: pipeline left on the table</div>
+        <div class="ins-b" style="font-size:12px;">This isn't a platform failure but it shows up in every platform's data. App leads: 11.6% connect rate, 51% relevant when reached. Website: 4.3% connect rate, 54% relevant when reached. 16 New Leads (never called) have pulled portfolios above ₹50L worth ₹75.6 Cr combined.<br><br>Pooja Kapoor (₹51.6 Cr pulled, New Lead, appeared in week 01/02–07/02) has never been called. She has been in the system for over 60 days.<br><br><strong style="color:var(--red);">This is a ₹75 Cr gap that exists entirely because of process failure, not marketing failure. No additional spend required.</strong></div>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="footer">
+    <div class="fn">Ionic Wealth — Spends & Forecasting Tab &nbsp;·&nbsp; Generated 07 Apr 2026</div>
+    <div class="fn">Sources: Weekly-Report-04-04-2026 (spends) · central_leads_all_time · central_conversions_07Apr26</div>
+  </div>
+</div>
+ 
+<!-- Tab switch button (fixed bottom) -->
+<div id="tab-switcher" style="position:fixed;bottom:24px;right:24px;z-index:100;">
+  <button id="tab-btn-main" onclick="switchTab('spends')" style="background:var(--ink);color:var(--paper);border:none;padding:10px 20px;border-radius:4px;font-family:'Instrument Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.2);">→ Spends &amp; Forecasting</button>
+  <button id="tab-btn-spends" onclick="switchTab('main')" style="display:none;background:var(--ink);color:var(--paper);border:none;padding:10px 20px;border-radius:4px;font-family:'Instrument Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.2);">← Main Report</button>
 </div>
  
 <script>
@@ -630,6 +906,84 @@ new Chart('c_pipeline', {type:'bar',
   options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'₹'+ctx.raw.toFixed(1)+' Cr pulled AUM'}}},
     scales:{y:{title:{display:true,text:'Pulled AUM ₹ Cr',font:{size:9}},ticks:{callback:v=>'₹'+v+'Cr',font:{size:9}}},x:{ticks:{font:{size:10}}}}}
 });
+ 
+// ── TAB SWITCHING ─────────────────────────────────────────────────────────────
+window._spendChartsBuilt = false;
+function switchTab(tab) {
+  const mainPage = document.querySelector('.page');
+  const spendPage = document.getElementById('tab-spends');
+  const btnMain = document.getElementById('tab-btn-main');
+  const btnSpends = document.getElementById('tab-btn-spends');
+  if (tab === 'spends') {
+    mainPage.style.display='none'; spendPage.style.display='block';
+    btnMain.style.display='none'; btnSpends.style.display='block';
+    window.scrollTo(0,0);
+    if (!window._spendChartsBuilt) { buildSpendCharts(); window._spendChartsBuilt=true; }
+  } else {
+    mainPage.style.display='block'; spendPage.style.display='none';
+    btnMain.style.display='block'; btnSpends.style.display='none';
+    window.scrollTo(0,0);
+  }
+}
+ 
+function buildSpendCharts() {
+  // Weekly Meta spend vs Hot+Warm rate
+  const wkL=['30/11','07/12','14/12','21/12','28/12','04/01','11/01','18/01','25/01','02/02','08/02','15/02','22/02','01/03','08/03','15/03','22/03','29/03'];
+  const wkS=[297764,250045,219436,137460,34966,173089,209948,209904,209929,193866,102166,140825,114780,65169,69563,63460,47575,55800];
+  const wkH=[9.2,4.1,3.7,4.8,18.2,9.5,8.3,14.5,12.7,12.1,6.8,9.1,7.1,4.3,0,4.8,7.1,4.3];
+  new Chart('c_spendqual',{data:{labels:wkL,datasets:[
+    {type:'bar',label:'Meta spend',data:wkS,backgroundColor:'rgba(226,75,74,0.45)',yAxisID:'y',order:2},
+    {type:'line',label:'Hot+Warm %',data:wkH,borderColor:'#639922',borderWidth:2.5,pointRadius:4,pointBackgroundColor:'#639922',tension:0.3,yAxisID:'y2',order:1,fill:false}
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+    scales:{y:{position:'left',title:{display:true,text:'Meta spend (₹)',font:{size:9}},ticks:{callback:v=>'₹'+(v/1000).toFixed(0)+'K',font:{size:8}}},y2:{position:'right',title:{display:true,text:'Hot+Warm %',font:{size:9}},grid:{drawOnChartArea:false},ticks:{callback:v=>v+'%',font:{size:8}}},x:{ticks:{font:{size:8},maxRotation:45,autoSkip:false}}}}});
+ 
+  // Monthly spend by channel
+  const mL2=['Mar25','Apr25','May25','Jun25','Jul25','Aug25','Sep25','Oct25','Nov25','Dec25','Jan26','Feb26','Mar26'];
+  new Chart('c_monthspend',{type:'bar',data:{labels:mL2,datasets:[
+    {label:'Meta',data:[1.6,0,0,5.4,14.7,18.1,13.1,10.4,8.0,14.0,18.6,15.5,5.6],backgroundColor:'rgba(226,75,74,0.75)'},
+    {label:'Google',data:[0,0,0,0,0,0,0,0,0,6.3,4.9,5.2,2.7],backgroundColor:'rgba(133,183,235,0.85)'},
+    {label:'LinkedIn',data:[1.6,3.3,3.9,3.7,0,5.9,13.3,6.2,0,0.4,0,0,0],backgroundColor:'rgba(99,153,34,0.75)'}
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+    scales:{x:{stacked:true,ticks:{font:{size:9}}},y:{stacked:true,title:{display:true,text:'₹ Lakhs',font:{size:9}},ticks:{font:{size:9}}}}}});
+ 
+  // Funnel
+  new Chart('c_funnel',{type:'bar',data:{labels:['Total leads (13K)','Connected (~7.9K)','Relevant (2.2K)','Pipeline>50L (126)','Converted (125)'],datasets:[
+    {label:'Volume',data:[13071,7900,2173,126,125],backgroundColor:['#378ADD','#5BA3E8','#639922','#EF9F27','#1D9E75'],yAxisID:'y'},
+    {label:'% to next',data:[60.4,27.5,5.8,99.2,null],type:'line',borderColor:'#E24B4A',borderWidth:2,pointRadius:6,pointBackgroundColor:'#E24B4A',tension:0,yAxisID:'y2',fill:false}
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+    scales:{y:{position:'left',ticks:{font:{size:9}}},y2:{position:'right',max:110,grid:{drawOnChartArea:false},ticks:{callback:v=>v+'%',font:{size:9}}},x:{ticks:{font:{size:8}}}}}});
+ 
+  // Monthly volume stacked
+  const mL=['Jan25','Feb25','Mar25','Apr25','May25','Jun25','Jul25','Aug25','Sep25','Oct25','Nov25','Dec25','Jan26','Feb26','Mar26','Apr26'];
+  new Chart('c_monthly_vol',{type:'bar',data:{labels:mL,datasets:[
+    {label:'App',data:[52,56,74,73,95,275,568,671,380,294,669,469,290,219,142,23],backgroundColor:'rgba(55,138,221,0.8)'},
+    {label:'Meta',data:[47,57,55,70,105,357,763,817,418,276,307,526,430,361,244,5],backgroundColor:'rgba(226,75,74,0.75)'},
+    {label:'AOL',data:[0,0,0,0,0,0,0,0,0,58,19,85,81,618,236,47],backgroundColor:'rgba(186,119,23,0.75)'},
+    {label:'Google',data:[30,39,41,44,47,97,105,93,68,98,125,50,50,36,27,2],backgroundColor:'rgba(133,183,235,0.85)'},
+    {label:'Website',data:[29,39,35,29,44,70,107,109,67,23,53,51,23,32,33,3],backgroundColor:'rgba(99,153,34,0.75)'},
+    {label:'LinkedIn+Other',data:[47,44,34,47,66,102,241,193,73,21,70,80,1,9,11,0],backgroundColor:'rgba(180,178,169,0.75)'}
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+    scales:{x:{stacked:true,ticks:{font:{size:8},maxRotation:45}},y:{stacked:true,ticks:{font:{size:9}}}}}});
+ 
+  // Monthly relevant rate
+  new Chart('c_monthly_rel',{type:'line',data:{labels:mL,datasets:[
+    {label:'Relevant %',data:[51.7,41.7,49.8,42.6,54.1,33.4,23.5,9.3,9.7,13.5,11.8,6.9,7.8,7.8,6.2,1.2],borderColor:'#639922',borderWidth:2.5,pointRadius:4,tension:0.3,fill:true,backgroundColor:'rgba(99,153,34,0.08)'},
+    {label:'Baseline',data:mL.map(()=>6.5),borderColor:'#EF9F27',borderWidth:1.5,borderDash:[4,3],pointRadius:0,tension:0,fill:false}
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+    scales:{y:{suggestedMax:60,ticks:{callback:v=>v+'%',font:{size:9}}},x:{ticks:{font:{size:8},maxRotation:45}}}}});
+ 
+  // Lag model
+  const lagM=['Apr25','May25','Jun25','Jul25','Aug25','Sep25','Oct25','Nov25','Dec25','Jan26','Feb26','Mar26','Apr26'];
+  const lagL=[263,357,901,1784,1883,1006,770,1243,1261,875,1275,693,81];
+  const actA=[0.88,2.31,1.28,1.92,1.43,2.56,3.55,3.76,4.47,18.03,5.71,3.98,12.49];
+  new Chart('c_lagmodel',{data:{labels:lagM,datasets:[
+    {type:'bar',label:'Lagged leads',data:lagL.map(v=>v/20),backgroundColor:'rgba(55,138,221,0.3)',yAxisID:'y',order:3},
+    {type:'line',label:'Actual AUM',data:actA,borderColor:'#E24B4A',borderWidth:2.5,pointRadius:4,pointBackgroundColor:'#E24B4A',tension:0.3,yAxisID:'y2',order:1,fill:false},
+    {type:'line',label:'Normalised forecast',data:[null,null,null,null,null,null,null,null,null,3.5,4.1,2.2,null],borderColor:'#639922',borderWidth:2,borderDash:[5,4],pointRadius:4,pointBackgroundColor:'#639922',yAxisID:'y2',order:2,fill:false}
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+    scales:{y:{position:'left',title:{display:true,text:'Leads ÷20',font:{size:9}},ticks:{font:{size:9}}},y2:{position:'right',grid:{drawOnChartArea:false},ticks:{callback:v=>'₹'+v+'Cr',font:{size:9}}},x:{ticks:{font:{size:9}}}}}});
+}
 </script>
 </body>
 </html>
+ 
